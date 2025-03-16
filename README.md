@@ -1,4 +1,4 @@
-# 🚀 Small URL - URL Shortener with Zookeeper, Redis & MongoDB
+# Small URL - URL Shortener with Zookeeper, Redis & MongoDB
 
 A **high-performance, distributed URL shortener** built using:
 - **Spring Boot** for backend services
