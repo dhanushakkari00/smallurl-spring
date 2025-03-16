@@ -116,8 +116,8 @@ POST /api/shorten
 **Request Params:**
 | Parameter     | Type   | Required | Description |
 |--------------|--------|----------|-------------|
-| `originalUrl` | String | ✅ Yes | The long URL to shorten |
-| `expireInSeconds` | Long | ❌ No | Expiry time in seconds |
+| `originalUrl` | String |  Yes | The long URL to shorten |
+| `expireInSeconds` | Long |  No | Expiry time in seconds |
 
 **Example:**
 ```sh
@@ -151,7 +151,7 @@ If expired or invalid:
 
 ---
 
-## 📜 Tech Stack
+##  Tech Stack
 - **Spring Boot** – Backend Framework
 - **MongoDB** – Persistent Storage
 - **Redis** – Caching Layer
@@ -161,7 +161,7 @@ If expired or invalid:
 
 ---
 
-## 📌 Future Enhancements
+##  Future Enhancements
 1. **Custom shortcodes** (user-defined)  
 2. **Click tracking** (view analytics)  
 3. **QR Code generator** for short URLs  
@@ -169,18 +169,18 @@ If expired or invalid:
 
 ---
 
-## 📝 License
+##  License
 This project is **open-source** and free to use.
 
 ---
 
-## 📬 Contact
+##  Contact
 If you have any questions or need help, feel free to reach out!  
 
-👤 **Dhanush Akkari**  
-🔗 www.linkedin.com/in/dhanushakkari
+ **Dhanush Akkari**  
+ www.linkedin.com/in/dhanushakkari
 
 ---
 
-🔥 **Now go ahead & test your APIs in Postman!** 🚀
+
 
