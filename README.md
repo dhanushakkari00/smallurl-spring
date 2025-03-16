@@ -178,7 +178,7 @@ This project is **open-source** and free to use.
 If you have any questions or need help, feel free to reach out!  
 
 👤 **Dhanush Akkari**  
-🔗 [LinkedIn](www.linkedin.com/in/dhanushakkari)  
+🔗 www.linkedin.com/in/dhanushakkari
 
 ---
 
