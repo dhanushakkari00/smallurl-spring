@@ -1,0 +1,186 @@
+# 🚀 Small URL - URL Shortener with Zookeeper, Redis & MongoDB
+
+A **high-performance, distributed URL shortener** built using:
+- **Spring Boot** for backend services
+- **MongoDB** as a persistent database
+- **Redis** for caching short URLs
+- **Zookeeper** to ensure unique shortcodes in a distributed setup
+- **Base62 encoding** for efficient short URLs
+
+---
+
+## 📌 Features
+✅ **Shorten any URL** into a tiny, shareable link  
+✅ **Custom expiration** (set expiry for links)  
+✅ **High-performance** caching with **Redis**  
+✅ **Ensures unique codes** using **Zookeeper**  
+✅ **Automatic redirection** when visiting the short URL  
+✅ **Distributed System Ready** – Can be scaled horizontally  
+
+---
+
+## 📁 Project Structure
+```
+smallurl/
+│── src/main/java/com/example/smallurl/
+│   ├── controller/        # API controllers (UrlController)
+│   ├── service/           # Business logic (UrlService)
+│   ├── repository/        # MongoDB repository (UrlRepository)
+│   ├── config/            # Configuration for MongoDB, Redis, and Zookeeper
+│   ├── model/             # URL entity (Url.java)
+│   ├── SmallurlApplication.java  # Main entry point
+│── src/main/resources/
+│   ├── application.properties  # App configuration
+│── pom.xml                # Maven dependencies
+│── README.md              # You are here! 📌
+```
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Prerequisites
+Before running, ensure you have:
+- **Java 17+** installed
+- **MongoDB** running on port `27017`
+- **Redis** running on port `6379`
+- **Zookeeper** running on port `2181`
+- **Maven** installed
+
+---
+
+### 2️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/smallurl.git
+cd smallurl
+```
+
+---
+
+### 3️⃣ Configure the App
+Update the `application.properties` file inside `src/main/resources/`:
+
+```properties
+# MongoDB Configuration
+spring.data.mongodb.uri=mongodb://localhost:27017/smallurl_db
+
+# Redis Configuration
+spring.cache.type=redis
+spring.redis.host=localhost
+spring.redis.port=6379
+
+# Zookeeper Configuration
+zookeeper.connectString=localhost:2181
+zookeeper.sessionTimeout=3000
+zookeeper.connectionTimeout=3000
+```
+
+---
+
+### 4️⃣ Run the Services
+**Start MongoDB:**
+```sh
+mongod --dbpath "C:\data\db"
+```
+
+**Start Redis (Memurai for Windows users):**
+```sh
+memurai-server
+```
+
+**Start Zookeeper:**
+```sh
+zkServer.cmd
+```
+
+---
+
+### 5️⃣ Build & Run
+```sh
+mvn clean install
+mvn spring-boot:run
+```
+or
+```sh
+./mvnw spring-boot:run  # (For Linux/macOS)
+```
+
+---
+
+## 🛠️ API Endpoints
+
+### 1️⃣ Shorten a URL
+```http
+POST /api/shorten
+```
+**Request Params:**
+| Parameter     | Type   | Required | Description |
+|--------------|--------|----------|-------------|
+| `originalUrl` | String | ✅ Yes | The long URL to shorten |
+| `expireInSeconds` | Long | ❌ No | Expiry time in seconds |
+
+**Example:**
+```sh
+curl -X POST "http://localhost:8080/api/shorten?originalUrl=https://example.com&expireInSeconds=3600"
+```
+**Response:**
+```json
+{
+    "shortUrl": "http://localhost:8080/api/redirect/abc123"
+}
+```
+
+---
+
+### 2️⃣ Redirect to Original URL
+```http
+GET /api/redirect/{shortCode}
+```
+**Example:**  
+```sh
+http://localhost:8080/api/redirect/abc123
+```
+🔄 **Redirects** to the original URL!
+
+If expired or invalid:
+```json
+{
+    "error": "URL not found or expired."
+}
+```
+
+---
+
+## 📜 Tech Stack
+- **Spring Boot** – Backend Framework
+- **MongoDB** – Persistent Storage
+- **Redis** – Caching Layer
+- **Zookeeper** – Unique ID Coordination
+- **Base62 Encoding** – URL Shortening
+- **Maven** – Dependency Management
+
+---
+
+## 📌 Future Enhancements
+✔️ **Custom shortcodes** (user-defined)  
+✔️ **Click tracking** (view analytics)  
+✔️ **QR Code generator** for short URLs  
+✔️ **User authentication** for private links  
+
+---
+
+## 📝 License
+This project is **open-source** and free to use.
+
+---
+
+## 📬 Contact
+If you have any questions or need help, feel free to reach out!  
+
+👤 **Dhanush Akkari**  
+🔗 [LinkedIn](www.linkedin.com/in/dhanushakkari)  
+
+---
+
+🔥 **Now go ahead & test your APIs in Postman!** 🚀
+
