@@ -9,7 +9,7 @@ A **high-performance, distributed URL shortener** built using:
 
 ---
 
-## 📌 Features
+##  Features
 ✅ **Shorten any URL** into a tiny, shareable link  
 ✅ **Custom expiration** (set expiry for links)  
 ✅ **High-performance** caching with **Redis**  
@@ -19,7 +19,7 @@ A **high-performance, distributed URL shortener** built using:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 smallurl/
 │── src/main/java/com/example/smallurl/
@@ -39,7 +39,7 @@ smallurl/
 
 ## ⚙️ Setup & Installation
 
-### 1️⃣ Prerequisites
+### 1️ Prerequisites
 Before running, ensure you have:
 - **Java 17+** installed
 - **MongoDB** running on port `27017`
@@ -49,7 +49,7 @@ Before running, ensure you have:
 
 ---
 
-### 2️⃣ Clone the Repository
+### 2️ Clone the Repository
 ```sh
 git clone https://github.com/yourusername/smallurl.git
 cd smallurl
@@ -57,7 +57,7 @@ cd smallurl
 
 ---
 
-### 3️⃣ Configure the App
+### 3️ Configure the App
 Update the `application.properties` file inside `src/main/resources/`:
 
 ```properties
@@ -77,7 +77,7 @@ zookeeper.connectionTimeout=3000
 
 ---
 
-### 4️⃣ Run the Services
+### 4️ Run the Services
 **Start MongoDB:**
 ```sh
 mongod --dbpath "C:\data\db"
@@ -95,7 +95,7 @@ zkServer.cmd
 
 ---
 
-### 5️⃣ Build & Run
+### 5️ Build & Run
 ```sh
 mvn clean install
 mvn spring-boot:run
@@ -109,7 +109,7 @@ or
 
 ## 🛠️ API Endpoints
 
-### 1️⃣ Shorten a URL
+### 1️ Shorten a URL
 ```http
 POST /api/shorten
 ```
@@ -132,7 +132,7 @@ curl -X POST "http://localhost:8080/api/shorten?originalUrl=https://example.com&
 
 ---
 
-### 2️⃣ Redirect to Original URL
+### 2️ Redirect to Original URL
 ```http
 GET /api/redirect/{shortCode}
 ```
@@ -140,7 +140,7 @@ GET /api/redirect/{shortCode}
 ```sh
 http://localhost:8080/api/redirect/abc123
 ```
-🔄 **Redirects** to the original URL!
+ **Redirects** to the original URL!
 
 If expired or invalid:
 ```json
