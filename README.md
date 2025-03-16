@@ -10,12 +10,12 @@ A **high-performance, distributed URL shortener** built using:
 ---
 
 ##  Features
-✅ **Shorten any URL** into a tiny, shareable link  
-✅ **Custom expiration** (set expiry for links)  
-✅ **High-performance** caching with **Redis**  
-✅ **Ensures unique codes** using **Zookeeper**  
-✅ **Automatic redirection** when visiting the short URL  
-✅ **Distributed System Ready** – Can be scaled horizontally  
+1. **Shorten any URL** into a tiny, shareable link  
+2. **Custom expiration** (set expiry for links)  
+3. **High-performance** caching with **Redis**  
+4. **Ensures unique codes** using **Zookeeper**  
+5. **Automatic redirection** when visiting the short URL  
+6. **Distributed System Ready** – Can be scaled horizontally  
 
 ---
 
@@ -39,7 +39,7 @@ smallurl/
 
 ## ⚙️ Setup & Installation
 
-### 1️ Prerequisites
+### 1️.Prerequisites
 Before running, ensure you have:
 - **Java 17+** installed
 - **MongoDB** running on port `27017`
@@ -49,7 +49,7 @@ Before running, ensure you have:
 
 ---
 
-### 2️ Clone the Repository
+### 2️.Clone the Repository
 ```sh
 git clone https://github.com/yourusername/smallurl.git
 cd smallurl
@@ -57,7 +57,7 @@ cd smallurl
 
 ---
 
-### 3️ Configure the App
+### 3️.Configure the App
 Update the `application.properties` file inside `src/main/resources/`:
 
 ```properties
@@ -77,7 +77,7 @@ zookeeper.connectionTimeout=3000
 
 ---
 
-### 4️ Run the Services
+### 4️.Run the Services
 **Start MongoDB:**
 ```sh
 mongod --dbpath "C:\data\db"
@@ -95,7 +95,7 @@ zkServer.cmd
 
 ---
 
-### 5️ Build & Run
+### 5️.Build & Run
 ```sh
 mvn clean install
 mvn spring-boot:run
@@ -109,7 +109,7 @@ or
 
 ## 🛠️ API Endpoints
 
-### 1️ Shorten a URL
+### 1️.Shorten a URL
 ```http
 POST /api/shorten
 ```
@@ -132,7 +132,7 @@ curl -X POST "http://localhost:8080/api/shorten?originalUrl=https://example.com&
 
 ---
 
-### 2️ Redirect to Original URL
+### 2️.Redirect to Original URL
 ```http
 GET /api/redirect/{shortCode}
 ```
@@ -162,10 +162,10 @@ If expired or invalid:
 ---
 
 ## 📌 Future Enhancements
-✔️ **Custom shortcodes** (user-defined)  
-✔️ **Click tracking** (view analytics)  
-✔️ **QR Code generator** for short URLs  
-✔️ **User authentication** for private links  
+1. **Custom shortcodes** (user-defined)  
+2. **Click tracking** (view analytics)  
+3. **QR Code generator** for short URLs  
+4. **User authentication** for private links  
 
 ---
 
